@@ -1,4 +1,4 @@
-###Email admin app
+### Email admin app
 <p>This is small project to continue practicing Java. The application does the following:</p> 
 
 - Generates an email with the following syntax: *firstname.lastname@department.company.com*
