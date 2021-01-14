@@ -1,5 +1,6 @@
 package emailapp;
 
+import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -9,9 +10,9 @@ public class Email {
     private String password;
     private String department;
     // this is the name of the company that will be appended to the email address
-    private String companySuffix = "amazon.com";
+    private String companySuffix = "awesome.com";
     private String email;
-    private int mailboxCapacity;
+    private int mailboxCapacity = 500;
     //need to define the length
     private int defaultPasswordLength = 8;
     private String alternateEmail;
@@ -73,8 +74,29 @@ public class Email {
     }
 
     //set the mailbox capacity
+    public void setMailboxCapacity(int capacity) {
+        this.mailboxCapacity = capacity;
+    }
 
     //set the alternate email
+    public void setAlternateEmail(String alternateEmail) {
+        this.alternateEmail = alternateEmail;
+    }
 
     //change the password
+    public void changePassword(String newPassword) {
+        this.password = newPassword;
+    }
+
+    public int getMailboxCapacity() {
+        return mailboxCapacity;
+    }
+
+    public String getAlternateEmail() {
+        return alternateEmail;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }
