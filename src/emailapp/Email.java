@@ -1,5 +1,6 @@
 package emailapp;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Email {
@@ -7,6 +8,9 @@ public class Email {
     private String lastName;
     private String password;
     private String department;
+    // this is the name of the company that will be appended to the email address
+    private String companySuffix = "amazon.com";
+    private String email;
     private int mailboxCapacity;
     //need to define the length
     private int defaultPasswordLength = 8;
@@ -26,6 +30,10 @@ public class Email {
         // call a method to generate random password
         this.password = randomPassword(defaultPasswordLength);
         System.out.println("Your password is: " + this.password);
+
+        // combine elements to generate email in format firstname.lastname@department.company.com
+        email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase() + "." + companySuffix;
+        System.out.println("Your email is: " + email);
     }
         //ask for department
     private String setDepartment() {
