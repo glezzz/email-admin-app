@@ -22,19 +22,19 @@ public class Email {
         // 'this.firstName' refers to class level variable, 'firstName' refers to local variable
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("EMAIL CREATED: " + this.firstName + " " + this.lastName);
+        System.out.println("New worker: " + this.firstName + " " + this.lastName);
 
         // call a method asking for the department and return it
         this.department = setDepartment();
-        System.out.println("Department: " + this.department);
+        //System.out.println("Department: " + this.department);
 
         // call a method to generate random password
         this.password = randomPassword(defaultPasswordLength);
-        System.out.println("Your password is: " + this.password);
+        //System.out.println("Your password is: " + this.password);
 
         // combine elements to generate email in format firstname.lastname@department.company.com
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase() + "." + companySuffix;
-        System.out.println("Your email is: " + email);
+        //System.out.println("Your email is: " + email);
     }
         //ask for department
     private String setDepartment() {
@@ -47,7 +47,7 @@ public class Email {
             return "Sales";
 
         } else if (depChoice == 2) {
-            return "Dev";
+            return "Development";
 
         } else if (depChoice == 3) {
             return "Accounting";
@@ -98,5 +98,13 @@ public class Email {
 
     public String getPassword() {
         return password;
+    }
+
+    public String showInfo() {
+        return  "Display name: " + firstName + " " + lastName +
+                "\nDepartment: " + department +
+                "\nCompany email: " + email +
+                "\nPassword: " + password +
+                "\nMailbox capacity: " + mailboxCapacity + "mb";
     }
 }
